@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id = "Lista">Proyecto 5</h1>
+    <p> Este es el proyecto </p>
+
+    <script>
+        let lista = document.getElementById('Lista');
+        let texto = "Hola, mi nombre es Ángel y acabo de cumplir 19 años. "
+        console.log(texto);
+
+        let text = `The quick
+            brown fox
+            jumps over
+            the lazy dog`;
+        console.log(text);
+
+        let a = 5;
+        let b = 10;
+        console.log(`El resultado de la suma de ${a} y ${b} es ${a+b}`); // con $ y {} se puede imprimir el valor de las variables DEBE TENER COMILLA INVERTIDA
+
+        let persona = "Mike";
+        let edad = 28;
+
+        function miFunction(cadenas, personaX, edadExp){
+            let resultado = "";
+            console.log(cadenas);
+            console.log(cadenas[2]);
+            // ternario
+           // edadExp < 18 ? resultado = "menor de edad" : resultado = "mayor de edad" // si edadExp no tiene valor, se le asigna 18
+
+            //mejora
+            resultado = edadExp < 18 ? "menor de edad" : "mayor de edad";
+/*
+            if (edadExp < 18){
+                resultado = "es menor de edad";
+            } else {
+                resultado = " es mayor de edad";
+            }*/
+
+            return resultado
+            //return cadenas + ' ' + personaX + " tiene " + edadExp + " años";
+        }
+
+        console.log(miFunction('Hola','Pepe',30));
+
+        let resultado2 = miFunction`Hola, buenos días ${persona} ,tienes ${edad} años`;
+        console.log(resultado2);
+
+        let titulo = "Ganadores de los Oscares";
+        let cantantes = ["Adele", "Bruno Mars", "Billie Elish", "Shakira", "Rihanna"];
+        let cadenaHTML = `<h1>${titulo}</h1>`
+
+        cadenaHTML += `<ul>`;
+        for (let cantante of cantantes){
+            cadenaHTML += `<li>${cantante}</li>`;
+        }
+
+        cadenaHTML += `</ul>`;
+
+        lista.innerHTML = cadenaHTML;
+
+    </script>
+
+</body>
+</html>
